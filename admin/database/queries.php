@@ -25,9 +25,28 @@ class Querry{
         return $result;
     }
 
+    //for deleting blog
     public function deleteblogs($id){
         $sql = "DELETE FROM blogs WHERE id = '$id' ";
         $result = $this->db->delete($sql);
+        return $result;
+    }
+    // get the blog by id
+    public function getblog($id){
+        $sql = "SELECT * FROM blogs WHERE id = '$id' ";
+        $result = $this->db->select($sql);
+        return $result;
+    }
+    // update blog with image
+    public function updateblog($id, $title, $image, $content){
+        $sql = "UPDATE blogs SET title = '$title', imagename = '$image', content = '$content' WHERE id = '$id' ";
+        $result = $this->db->update($sql);
+        return $result; 
+    }
+    // update blog with title and content
+    public function updateblogcontent($id, $title, $content){
+        $sql = "UPDATE blogs SET title = '$title', content = '$content' WHERE id = '$id' ";
+        $result = $this->db->update($sql);
         return $result;
     }
 }
