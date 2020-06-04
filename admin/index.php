@@ -42,12 +42,28 @@
         .belowwrap {
             margin-bottom: 1%;
             margin-left: 1%;
+
         }
 
         .upperbelowwrap {
             display: grid;
             grid-template-rows: auto 5fr;
 
+        }
+
+        .innerbelowwrap {
+            display: flex;
+            flex-direction: row-reverse;
+
+
+        }
+
+        .inner {
+            margin-right: 5%;
+        }
+
+        .outer {
+            margin-right: 3%;
         }
     </style>
 </head>
@@ -65,8 +81,8 @@
         </div>
         <div class="newblog">
             <button style="margin-top: 2%; height:50px;background-color:olive;">
-            <a style="color:papayawhip;text-decoration: none; " href="newblog.php">Post New Blog</a>
-        </button>
+                <a style="color:papayawhip;text-decoration: none; " href="newblog.php">Post New Blog</a>
+            </button>
         </div>
     </div>
     <br>
@@ -78,7 +94,7 @@
     if ($result) {
         while ($row = mysqli_fetch_array($result)) {
     ?>
-            <div class="wrapper">
+            <div class="wrapper" id="<?php echo $row['id'];?>">
                 <div class="upperwrap">
                     <div>
 
@@ -96,6 +112,26 @@
                 </div>
                 <div class="belowwrap">
                     <p><?php echo $row['content']; ?></p>
+                    <div class="innerbelowwrap">
+                        <div class="outer">
+                            <form action="blogdelete.php" method="POST">
+                                <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
+                                <input type="hidden" name="imagename" value="<?php echo $row['imagename']; ?>" />
+                                <button name="submit" style="margin-top: 2%; width:100px; height:50px;background-color:red; color:papayawhip;">
+                                    Delete
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="inner">
+                            <form action="blogedit.php" method="POST">
+                                <button name="submit" style="margin-top: 2%; width:100px; height:50px;background-color:blue; color:papayawhip;">
+                                    Edit
+                                </button>
+                            </form>
+                        </div>
+
+                    </div>
                 </div>
 
 
