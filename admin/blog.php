@@ -8,7 +8,7 @@ function dataupload($title, $image, $date, $content)
         header('Location:index.php?success=New Blog is Posted');
         exit();
     } else {
-        unlink($path);
+        unlink('img/'.$image);
         header('Location:newblog.php?error=There was an error uploading file');
         exit();
     }
