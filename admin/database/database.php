@@ -39,6 +39,8 @@ class Database{
         $result  = $this->link->$this->link->query($sql) or die (this->link->error.__LINE__);
         if ($result)
             return $result;
+        else
+            return false;
     }
 
 }
