@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
         $time=time();
         $title = $_POST['title'];
         $content  = $_POST['content'];
-        $image = $imagename.$t.".".$imageext;
+        $image = $imagename.$time.".".$imageext;
         $path = 'img/'.$image;
         if(move_uploaded_file($_FILES["blogimage"]["tmp_name"],$path)){
             include_once('database/queries.php');
@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
             $result = $qry->newblog($title,$image,date("d-M-Y",$time),$content);
             if ($result)
             {
-                header('Location:newblog.php?success=New Blog is Posted');
+                header('Location:index.php?success=New Blog is Posted');
                 exit();  
             }
             else{
@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
 
         }
         else{
-            $error ="There was an error uploading file";
+            $error ='There was an error uploading file'.$path.'';
             header('Location:newblog.php?error='.$error.'');
         exit();
         }
