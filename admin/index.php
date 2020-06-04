@@ -125,6 +125,7 @@
 
                         <div class="inner">
                             <form action="blogedit.php" method="POST">
+                            <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
                                 <button name="submit" style="margin-top: 2%; width:100px; height:50px;background-color:blue; color:papayawhip;">
                                     Edit
                                 </button>
