@@ -14,6 +14,8 @@ class Database{
         $this->connectDB();
     }
 
+    //DB connection
+
     private function connectDB(){
         $this-> link = new mysqli($this->host,$this->user,$this->pass,$this->dbname);
         if(!this->link)
@@ -22,4 +24,21 @@ class Database{
             return false;
         }
     }
+
+
+    //Crud Opertations
+
+    //Insert Data
+    public function insert($sql){
+        $result = $this->link->query($sql) or die (this->link->error.__LINE__);
+        return $result;
+    }
+
+    //Read Data
+    public function select($sql){
+        $result  = $this->link->$this->link->query($sql) or die (this->link->error.__LINE__);
+        if ($result)
+            return $result;
+    }
+
 }
