@@ -3,7 +3,7 @@ function dataupload($title, $image, $date, $content)
 {
     include_once('database/queries.php');
     $qry = new Querry();
-    $result = $qry->newblog($title, $image, $date, $time, $content);
+    $result = $qry->newblog($title, $image, $date, $content);
     if ($result) {
         header('Location:index.php?success=New Blog is Posted');
         exit();
