@@ -37,7 +37,7 @@ class Database{
     //Read Data
     public function select($sql){
         $result  = $this->link->$this->link->query($sql) or die (this->link->error.__LINE__);
-        if ($result)
+        if ($result->num_rows)
             return $result;
         else
             return false;
@@ -45,6 +45,12 @@ class Database{
 
     //update the data
     public function update($sql){
+        $result = $this->link->query($sql) or die (this->link->error.__LINE__);
+        return $result;
+    }
+
+    //delete data
+    public function delete($sql){
         $result = $this->link->query($sql) or die (this->link->error.__LINE__);
         return $result;
     }
