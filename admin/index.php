@@ -4,7 +4,6 @@
 <head>
     <title>Admin Panel </title>
     <style>
-       
         .header {
             display: flex;
             justify-content: space-between;
@@ -22,7 +21,8 @@
             margin-left: 5%;
 
         }
-        .wrapper{
+
+        .wrapper {
             display: grid;
             grid-template-rows: 2fr auto;
             box-shadow: 3px 3px 5px 6px #ccc;
@@ -31,22 +31,24 @@
             margin-left: 10%;
             background-color: lightsteelblue;
         }
-        .upperwrap{
+
+        .upperwrap {
             margin-top: 1%;
             margin-left: 1%;
             display: grid;
             grid-template-columns: 2fr 10fr;
         }
-        .belowwrap{
+
+        .belowwrap {
             margin-bottom: 1%;
             margin-left: 1%;
         }
-        .upperbelowwrap{
+
+        .upperbelowwrap {
             display: grid;
-            grid-template-rows:auto 1fr ;
+            grid-template-rows: auto 5fr;
 
         }
-        
     </style>
 </head>
 
@@ -67,22 +69,39 @@
     </div>
     <br>
     <br>
-    <div class="wrapper">
-        <div class="upperwrap">
-            <div >
-                
-                <img  style="width:300px;height:200px;" src="img/Screenshot from 2020-02-14 09-46-021591276038.png">
-            </div>
-            <div class="upperbelowwrap">
-                <div>hello</div>
-                <div>world</div>
-            </div>
-            
-        </div>
-        <div class="belowwrap">uygceugyuyeguyweguy</div>
+    <?php
+    include_once('database/queries.php');
+    $qry = new Querry();
+    $result = $qry->showblogs();
+    if ($result) {
+        while ($row = mysqli_fetch_array($result)) {
+    ?>
+            <div class="wrapper">
+                <div class="upperwrap">
+                    <div>
+
+                        <img style="width:300px;height:200px;" src='img/<?php echo $row['imagename']; ?>'>
+                    </div>
+                    <div class="upperbelowwrap">
+                        <div style="margin-left:30%; margin-top:3%;">
+                            <h2><?php echo $row['title']; ?></h2>
+                        </div>
+                        <div style="margin-left:35%; ">
+                            <p><?php echo $row['blog_date']; ?></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="belowwrap">
+                    <p><?php echo $row['content']; ?></p>
+                </div>
 
 
-    </div>
+            </div>
+            <br>
+            <br>
+    <?php }
+    } ?>
 
     </boby>
 
