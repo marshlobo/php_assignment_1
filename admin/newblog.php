@@ -33,11 +33,11 @@
       <input type="file" name="blogimage" id="blogimage" required>
       <br />
       <br />
-      <input type="text" name="title" style="width: 90%;" placeholder="TITLE">
+      <input type="text" name="title" style="width: 90%;" placeholder="TITLE" required>
       <br />
       <br />
       CONTENT:
-      <textarea name="content" style="width: 90%; height: 100px;"></textarea>
+      <textarea name="content" style="width: 90%; height: 100px;" required></textarea>
       <br />
       <br />
       <button style="margin-bottom: 1%;" name="submit" type="submit">POST</button>
