@@ -24,4 +24,10 @@ class Querry{
         $result = $this->db->select($sql);
         return $result;
     }
+
+    public function deleteblogs($id){
+        $sql = "DELETE FROM blogs WHERE id = '$id' ";
+        $result = $this->db->delete($sql);
+        return $result;
+    }
 }
