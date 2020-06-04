@@ -43,4 +43,10 @@ class Database{
             return false;
     }
 
+    //update the data
+    public function update($sql){
+        $result = $this->link->query($sql) or die (this->link->error.__LINE__);
+        return $result;
+    }
+
 }
