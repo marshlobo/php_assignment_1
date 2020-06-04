@@ -17,4 +17,11 @@ class Querry{
         return $result;
 
     }
+
+    //For display of blogs
+    public function showblogs(){
+        $sql = "SELECT * FROM blogs";
+        $result = $this->db->select($sql);
+        return $result;
+    }
 }
