@@ -18,7 +18,7 @@ class Database{
 
     private function connectDB(){
         $this-> link = new mysqli($this->host,$this->user,$this->pass,$this->dbname);
-        if(!this->link)
+        if(!$this->link)
         {
             $this->error = "connection failed to DB".$this ->link ->connect_error;
             return false;
@@ -30,13 +30,13 @@ class Database{
 
     //Insert Data
     public function insert($sql){
-        $result = $this->link->query($sql) or die (this->link->error.__LINE__);
+        $result = $this->link->query($sql) or die ($this->link->error.__LINE__);
         return $result;
     }
 
     //Read Data
     public function select($sql){
-        $result  = $this->link->$this->link->query($sql) or die (this->link->error.__LINE__);
+        $result  = $this->link->query($sql) or die ($this->link->error.__LINE__);
         if ($result->num_rows)
             return $result;
         else
@@ -45,13 +45,13 @@ class Database{
 
     //update the data
     public function update($sql){
-        $result = $this->link->query($sql) or die (this->link->error.__LINE__);
+        $result = $this->link->query($sql) or die ($this->link->error.__LINE__);
         return $result;
     }
 
     //delete data
     public function delete($sql){
-        $result = $this->link->query($sql) or die (this->link->error.__LINE__);
+        $result = $this->link->query($sql) or die ($this->link->error.__LINE__);
         return $result;
     }
 
