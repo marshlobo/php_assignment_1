@@ -64,7 +64,9 @@
                 </b></div>
         </div>
         <div class="newblog">
-            <button style="margin-top: 5%;"><a href="newblog.php">POST NEW BLOG</a></button>
+            <button style="margin-top: 2%; height:50px;background-color:olive;">
+            <a style="color:papayawhip;text-decoration: none; " href="newblog.php">Post New Blog</a>
+        </button>
         </div>
     </div>
     <br>
