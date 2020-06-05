@@ -64,7 +64,11 @@
                 </b></div>
         </div>
         <div class="newblog">
-            <button style="margin-top: 2%; height:50px;background-color:olive;"><a style="color:papayawhip;text-decoration: none; " href="admin/">Manage Blogs</a></button>
+        <a  href="admin/login.php">
+            <button style="margin-top: 2%; height:50px;background-color:olive;color:papayawhip;">
+            Manage Blogs
+        </button>
+        </a>
         </div>
     </div>
     <br>
