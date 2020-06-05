@@ -59,6 +59,8 @@ if (isset($_POST['submit']) || isset($_GET['error']));
         <input type="file" name="blogimage" id="blogimage" >
         <br />
         <br />
+        TITLE:
+        <br>
         <input type="text" name="title" style="width: 90%;" value="<?php echo $row['title']; ?>" placeholder="TITLE">
         <br />
         <br />
