@@ -64,11 +64,11 @@
                 </b></div>
         </div>
         <div class="newblog">
-        <a  href="admin/login.php">
-            <button style="margin-top: 2%; height:50px;background-color:olive;color:papayawhip;">
-            Manage Blogs
-        </button>
-        </a>
+            <a href="admin/login.php">
+                <button style="margin-top: 2%; height:50px;background-color:olive;color:papayawhip;">
+                    Manage Blogs
+                </button>
+            </a>
         </div>
     </div>
     <br>
