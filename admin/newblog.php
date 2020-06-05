@@ -30,17 +30,17 @@
           ?>
     </div>
     <form style="margin-left: 1%; " action="blog.php" method="POST" enctype="multipart/form-data">
-      <input type="file" name="blogimage" id="blogimage" required>
+      <input type="file" name="blogimage" id="blogimage" required />
       <br />
       <br />
-      <input type="text" name="title" style="width: 90%;" placeholder="TITLE" required>
+      <input type="text" name="title" style="width: 90%;" placeholder="TITLE" required/>
       <br />
       <br />
       CONTENT:
-      <textarea name="content" style="width: 90%; height: 100px;" required></textarea>
+      <textarea name="content" style="width: 90%; height: 100px;" ></textarea>
       <br />
       <br />
-      <button style="margin-bottom: 1%;" name="submit" type="submit">POST</button>
+      <button style="margin-bottom: 1%;" name="submit" >POST</button>
     </form>
   </div>
   </boby>
