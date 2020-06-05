@@ -88,9 +88,14 @@ if(!isset($_SESSION['user']))
                 </b></div>
         </div>
         <div class="newblog">
-            <a href="newblog.php">
+            <a style="text-decoration:none;" href="newblog.php">
                 <button style="margin-top: 2%; height:50px;background-color:olive;color:papayawhip;">
                     POST NEW BLOG
+                </button>
+            </a>
+            <a style="text-decoration:none;" href="login.php">
+                <button style="margin-top: 2%; height:50px;background-color:red;color:papayawhip;">
+                    LOGOUT
                 </button>
             </a>
         </div>
