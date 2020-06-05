@@ -85,7 +85,7 @@ if (isset($_POST['submit'])) {
     } else {
         $title = $_POST['title'];
         $content  = $_POST['content'];
-        // update content with out image
+        // upoload content without image
         contentupload($id, $title,$content);
 
     }
