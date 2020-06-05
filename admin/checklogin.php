@@ -1,11 +1,3 @@
-<?
-session_start();
-if(!isset($_SESSION['user']))
-{
-    header('Location:login.php');
-        exit();
-}
-?>
 <?php
 if (isset($_POST['submit'])) {
     $user = $_POST['user'];
