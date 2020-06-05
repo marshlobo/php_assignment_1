@@ -1,3 +1,11 @@
+<?
+session_start();
+if(!isset($_SESSION['user']))
+{
+    header('Location:login.php');
+        exit();
+}
+?>
 <?php
 function dataupload($id, $title, $image, $content, $delimage)
 {
@@ -9,7 +17,7 @@ function dataupload($id, $title, $image, $content, $delimage)
         header('Location:index.php#' . $id);
         exit();
     } else {
-        unlink('img/'.$image);
+        unlink('img/' . $image);
         $idArray = [$id, 'There was an error uploading file'];
         $urlArray = urlencode(base64_encode(json_encode($idArray)));
         header('Location:blogedit.php?error=' . $urlArray);
@@ -26,7 +34,7 @@ function contentupload($id, $title, $content)
         header('Location:index.php#' . $id);
         exit();
     } else {
-        
+
         $idArray = [$id, 'There was an error uploading file'];
         $urlArray = urlencode(base64_encode(json_encode($idArray)));
         header('Location:blogedit.php?error=' . $urlArray);
@@ -86,7 +94,6 @@ if (isset($_POST['submit'])) {
         $title = $_POST['title'];
         $content  = $_POST['content'];
         // upoload content without image
-        contentupload($id, $title,$content);
-
+        contentupload($id, $title, $content);
     }
 }

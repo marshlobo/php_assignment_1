@@ -1,3 +1,11 @@
+<?
+session_start();
+if(!isset($_SESSION['user']))
+{
+    header('Location:login.php');
+        exit();
+}
+?>
 <?php
 function dataupload($title, $image, $date, $content)
 {
@@ -8,7 +16,7 @@ function dataupload($title, $image, $date, $content)
         header('Location:index.php?success=New Blog is Posted');
         exit();
     } else {
-        unlink('img/'.$image);
+        unlink('img/' . $image);
         header('Location:newblog.php?error=There was an error uploading file');
         exit();
     }

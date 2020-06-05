@@ -1,3 +1,11 @@
+<?
+session_start();
+if(!isset($_SESSION['user']))
+{
+    header('Location:login.php');
+        exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 
@@ -94,7 +102,7 @@
     if ($result) {
         while ($row = mysqli_fetch_array($result)) {
     ?>
-            <div class="wrapper" id="<?php echo $row['id'];?>">
+            <div class="wrapper" id="<?php echo $row['id']; ?>">
                 <div class="upperwrap">
                     <div>
 
@@ -115,7 +123,7 @@
                     <div class="innerbelowwrap">
                         <div class="outer">
                             <form action="blogdelete.php" method="POST">
-                                <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
+                                <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
                                 <input type="hidden" name="imagename" value="<?php echo $row['imagename']; ?>" />
                                 <button name="submit" style="margin-top: 2%; width:100px; height:50px;background-color:red; color:papayawhip;">
                                     Delete
@@ -125,7 +133,7 @@
 
                         <div class="inner">
                             <form action="blogedit.php" method="POST">
-                            <input type="hidden" name="id" value="<?php echo $row['id'];?>"/>
+                                <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
                                 <button name="submit" style="margin-top: 2%; width:100px; height:50px;background-color:blue; color:papayawhip;">
                                     Edit
                                 </button>

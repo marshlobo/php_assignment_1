@@ -1,3 +1,8 @@
+<?php
+session_start();
+if (isset($_SESSION['user']))
+    session_unset();
+?>
 <html>
 
 <head>
@@ -27,12 +32,12 @@
             <h1 style="margin-top: 2%;">LOGIN</h1>
             <label>USER NAME:<label>
                     <br>
-                    <input style="width:50%;height:3%;" type="text" name="user" required/>
+                    <input style="width:50%;height:3%;" type="text" name="user" required />
                     <br>
                     <br>
                     <label>PASSWORD:</label>
                     <br>
-                    <input style="width:50%;height:3%;" type="password" name="pass" required/>
+                    <input style="width:50%;height:3%;" type="password" name="pass" required />
                     <br>
                     <br>
                     <button style="margin-bottom: 2%;width:10%;height:4%;background-color:#2196F3;" name="submit">LOGIN</button>
